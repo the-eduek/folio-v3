@@ -1,0 +1,12 @@
+$darkGrey: #3C4149;
+$lightGrey: #767A80;
+$primary: #0000ee ;
+
+%space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%tight {
+  letter-spacing: -0.75px;
+}

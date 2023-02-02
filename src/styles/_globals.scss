@@ -1,0 +1,37 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: #f9a8260d;
+  color: $darkGrey;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Apercu', sans-serif;
+  min-height: 100vh;
+  padding: 1.25rem;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.btn {
+  @extend %tight;
+  appearance: none;
+  background: none;  
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25;
+  outline: none;
+  padding: 0.25rem 0 0.25rem 0.25rem;
+}

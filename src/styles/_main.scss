@@ -1,0 +1,134 @@
+@import './variables';
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+};
+
+.nav {
+  display: flex;
+  justify-content: right;
+  padding: 0.5rem 0;
+}
+
+.about {
+  p {
+    font-weight: 300;
+    margin: 1.25rem 0;
+    // text-transform: lowercase;
+  }
+
+  b {
+    color: $primary;
+    font-weight: 600;
+  }
+
+}
+
+.contact {
+  padding: 1.5rem 0 7.5vh;
+  ul {
+    li {
+      list-style: none;
+      padding: 2rem 0 0;
+      overflow: hidden;
+
+      .contact-link {        
+        @extend %space-between;
+        color: $lightGrey;
+        font-size: 6vw;
+        margin: 0 0 1rem;
+        position: relative;
+        text-decoration: none;
+
+        div {
+          @extend %space-between;
+          border: 1px solid red;
+          overflow: hidden;
+          position: relative;
+          width: 100%
+        }
+
+        .text {
+          // border: 1px solid red;
+          // display: none;
+        @extend %space-between;
+          line-height: 1;
+          overflow: hidden;
+          position: absolute;
+          transform: translateY(100%);
+          transition: 250ms ease;
+          width: 100%;
+        }
+
+        &::after {
+          transition: 200ms ease-in;
+          bottom: -1rem;
+          content: "";
+          background: $lightGrey;
+          height: 0.125rem;
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+
+        &:hover {
+          // &::after {
+          //   left: 100%;
+          //   width: 0;
+          // }
+
+          .text {
+            &--two{
+              top: 0;
+            }
+          }
+        }
+
+        &__symbol {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  margin: auto 0 0;
+  padding: 0 0 6.5vh;
+  width: 100%;
+
+  h1,
+  h2 {
+    @extend %tight;
+    display: flex;
+    font-family: Jellee;
+    font-size: 13vw; // 7.25vw for big screens
+    text-transform: uppercase;
+    // white-space: nowrap;
+  }
+
+  h2 {
+    // border-top: 1px solid #000;
+    justify-content: flex-end;
+    padding: 2rem 0 0;
+    text-align: right
+  }
+}
+
+.footer {
+  @extend %space-between;
+  @extend %tight;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem 1rem;
+  position: fixed;
+  width: 100vw;
+
+  span.blink {
+    animation: blink 900ms cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    color: $primary;
+    margin: 0 -0.125rem;
+  }
+}
