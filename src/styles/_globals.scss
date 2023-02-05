@@ -7,11 +7,12 @@
 }
 
 main {
-  background-color: #f9a8260d;
+  background-color: $bgPrimary;
   color: $darkGrey;
   display: flex;
   flex-direction: column;
   font-family: 'Apercu', sans-serif;
+  font-weight: 300;
   min-height: 100vh;
 
   font-synthesis: none;
@@ -21,16 +22,15 @@ main {
   -webkit-text-size-adjust: 100%;
 }
 
-.btn {
-  @extend %tight;
-  appearance: none;
-  background: none;  
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.25;
-  outline: none;
-  padding: 0.25rem 0 0.25rem 0.25rem;
+
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
