@@ -15,12 +15,12 @@
 };
 
 header {
-  background-color: white;
+  background-color: #fff;
   font-size: 0.875rem;
   left: 0;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 10;
 
   div {
@@ -28,13 +28,18 @@ header {
     @extend %tight;
     background-color: $bgPrimary;
     padding: 1.25rem;
-    width: 100%;
-  }
 
-  span.blink {
-    animation: blink 900ms cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
-    color: $primary;
-    margin: 0 -0.125rem;
+    em,
+    span {
+      font-family: 'Inter', sans-serif;
+    }
+
+    span.blink {
+      animation: blink 900ms cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+      color: $primary;
+      font-size: 1rem;
+      margin: 0 -0.125rem;
+    }
   }
 }
 
@@ -46,33 +51,10 @@ header {
   h2 {
     @extend %tight;
     display: flex;
-    font-family: Jellee;
+    font-family: Jellee, sans-serif;
     font-size: 13vw; // 7.25vw for big screens
     text-shadow: 0 2px 5px rgba($primary, 0.15);
     text-transform: uppercase;
-  }
-
-  div {
-    position: relative;
-
-   .scroll {
-      bottom: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      font-size: 5vw;
-      height: 7.5vw;
-      overflow: hidden;
-      position: absolute;
-
-      span {
-        animation: slide-up 1500ms cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
-        color: $primary;
-
-        &:nth-child(2) {
-          padding: 1.5rem 0 0;
-        }
-      }
-    }
   }
 
   h2 {
@@ -83,12 +65,22 @@ header {
 }
 
 .about {
-  padding: 7.5vh 1.25rem;
-  width: 87.5%;
+  padding: 8vh 1.25rem;
+  width: 85%;
   
   p {
+    color: $lightGrey;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
     padding: 0 0 1.125rem;
     text-transform: lowercase;
+
+    &:last-child {
+      span {
+        white-space: nowrap;
+      }
+    }
   }
 
   b {
@@ -98,46 +90,92 @@ header {
 }
 
 .works {
-  padding: 0 1.25rem;
+  padding: 0 1.25rem 8vh;
 
   h3 {
-    font-weight: 500;
-    // padding: 0 0 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-shadow: 0 2px 5px rgba($primary, 0.15);
     text-transform: lowercase;
   }
 
   .project {
-    margin: 1.25rem 0 0;
-    // padding: 0.25rem 0;
-    // border: 1px solid red;
+    padding: 2.5rem 0 1rem;
+    position: relative;
+
+    &::after {
+      bottom: 0;
+      content: "";
+      background: $lightGrey;
+      height: 0.0625rem;
+      left: 0;
+      position: absolute;
+      transition: 200ms ease-in;
+      width: 100%;
+    }
 
     &__title {
-      @extend %space-between;
-      align-items: center;
-      font-size: 1.125rem;
-      text-transform: uppercase;
-      // padding: 0 0 0.5rem;
-
-      a {
-        border: 1px solid $darkGrey;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-        padding: 0.25rem;
-      }
+      font-size: 1.275rem;
+      font-weight: 500;
+      padding: 0 0 0.5rem;
     }
 
     &__desc {
-      color: $lightGrey;
-      display: none;
-      padding: 0.25rem 0 0;
-      text-transform: lowercase;
+      @extend %space-between;
+
+      p {          
+        color: $lightGrey;
+        font-size: 0.875rem;
+        text-transform: lowercase;
+
+        &:last-child {
+          color: rgba($primary, 0.675);
+        }
+      }
+    }
+
+    &__btn {
+      a {
+        align-items: center;
+        color: $primary;
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: 500;
+        height: 100%;
+      }
     }
   }
 }
 
 .contact {
-  padding: 7.5vh 1.5rem 15vh;
+  align-items: center;
+  display: flex;
+  // flex-direction: column;
+  padding: 0 1.5rem 8vh;
+
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+
+    p {
+      border: 1px solid $lightGrey;
+      border-radius: 2rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      text-transform: uppercase;
+      // width: 48%;
+    }
+  }
+
+  ul {
+    display: flex;
+    
+  }
 
   li {
     padding: 2rem 0 0;
@@ -166,7 +204,7 @@ header {
         line-height: 1;
         overflow: hidden;
         position: absolute;
-        transform: translateY(100%);
+        // transform: translateY(100%);
         transition: 250ms ease;
         width: 100%;
       }
@@ -197,6 +235,16 @@ header {
 
       &__symbol {
         padding: 0 0.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 410px) {
+  .about {    
+    p:last-child {
+      span {
+        white-space: normal;
       }
     }
   }
