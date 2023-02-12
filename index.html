@@ -12,13 +12,13 @@
       <header>
         <div>
           <p>
-            <em data-hour></em>
+            <em data-hour class="number"></em>
             <span class="blink">:</span>
-            <em data-minute></em>
+            <em data-minute class="number"></em>
             <span data-meridiem></span>
           </p>
           
-          <p><span>©</span> Eduek <span>2</span>k<span>2</span><span>3</span></p>
+          <p><span class="number">©</span> Eduek <span class="number">2</span>k<span class="number">2</span><span class="number">3</span></p>
         </div>
       </header>
 
@@ -108,7 +108,28 @@
       <section class="contact">
         <h3>Contact —</h3>
 
-        <p>Mail, GitHub, LinkedIn, Twitter.</p>
+        <p>
+          <span class="contact-link">
+            <a href="mailto:eduekakpannyah@gmail.com">
+              <span data-content="Mail" aria-hidden="true"></span> Mail
+            </a>,
+          </span>
+          <span class="contact-link">
+            <a class="contact-link" href="https://github.com/the-eduek/">
+              <span data-content="GitHub" aria-hidden="true"></span> GitHub
+            </a>,
+          </span>
+          <span class="contact-link">
+            <a class="contact-link" href="https://www.linkedin.com/in/eduek/">
+              <span data-content="LinkedIn" aria-hidden="true"></span> LinkedIn
+            </a>,
+          </span>
+          <span class="contact-link">
+            <a class="contact-link" href="https://twitter.com/the_eduek">
+              <span data-content="Twitter" aria-hidden="true"></span> Twitter
+            </a>.
+          </span>          
+        </p>
       </section>
     </main>
     <script type="module" src="/index.js"></script>

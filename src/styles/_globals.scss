@@ -1,13 +1,15 @@
-@import './variables';
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-main {
+html {
   background-color: $bgPrimary;
+  overscroll-behavior: none;
+}
+
+main {
   color: $darkGrey;
   font-family: 'Sora', sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -26,6 +28,7 @@ a {
 h3 {
   font-size: 1.125rem;
   font-weight: 400;
+  padding: 1.125rem 0 2rem;
   text-shadow: 0 2px 5px rgba($primary, 0.15);
   text-transform: lowercase;
 }
