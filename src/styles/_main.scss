@@ -97,15 +97,83 @@ header {
     padding: 0 0 1rem;
     position: relative;
 
-    &__title {
+    &__title {      
+      @extend %space-between;
+      align-items: center;
+      padding: 0 0 0.75rem;
+      position: relative;
+
+      
+      &:hover {
+        .project__name {
+          span {
+            transform: translateY(0);
+    
+            &::after {
+              transform: translateY(0);
+            }
+          }
+        }
+
+        .project__btn {
+          span {
+            transform: translate3d(100%, -100%, 0.5rem);
+          }
+        }
+      }
+    }
+
+    &__name {
+      @extend %transition;
       font-size: 1.5rem;
       font-weight: 500;
-      padding: 0 0 0.5rem;
-    }    
+      position: relative;
+
+      span {
+        @extend %transition;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transform: translateY(100%);
+
+        &::after {
+          @extend %transition;
+          color: $primary;
+          content: attr(data-content);
+          display: block;
+          transform: translateY(-100%);
+        }
+      }
+    }
+    
+    &__btn {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+
+      span {
+        @extend %transition;
+        color: $primary;
+        height: 2.25rem;
+        margin: 0 0 0 0.25rem;
+        width: 1.5rem;
+
+        svg {
+          height: 100%;
+          width: 100%;
+        }
+
+        &:last-child {
+          color: $darkGrey;
+          bottom: -100%;
+          left: -100%;
+          position: absolute;
+        }
+      }
+    }
 
     &__desc {
-      @extend %space-between;
-
       p {          
         color: $lightGrey;
         font-size: 0.875rem;
@@ -115,17 +183,6 @@ header {
         &:last-child {
           color: rgba($primary, 0.675);
         }
-      }
-    }
-
-    &__btn {
-      a {
-        align-items: center;
-        color: $primary;
-        display: flex;
-        font-size: 1.5rem;
-        font-weight: 500;
-        height: 100%;
       }
     }
 
@@ -141,7 +198,7 @@ header {
     }
 
     &:not(:first-child) {
-      margin: 2.5rem 0 0;
+      margin: 3rem 0 0;
     }
   }
 }
@@ -159,45 +216,43 @@ header {
     font-size: 1.5rem;
     font-weight: 500;
     display: flex;
+    
+    a {
+      color: $lightGrey;
+      position: relative;    
+      overflow: hidden;
+  
+      span {
+        @extend %transition;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transform: translateY(100%);
+
+        &::after {
+          @extend %transition;
+          color: $primary;
+          content: attr(data-content);
+          display: block;
+          transform: translateY(-100%);
+        }
+      }
+  
+      &:hover {
+        span {
+          transform: translateY(0);
+  
+          &::after {
+            transform: translateY(0);
+          }
+        }
+      } 
+    }
 
     &:not(:last-child) {
       margin: 0 0.25rem 0 0;
     }
-  }
-
-  a {
-    color: $lightGrey;
-    position: relative;    
-    overflow: hidden;
-
-    span {
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      transform: translateY(100%);
-      transition: transform 275ms ease;
-
-      &::after {
-        color: $primary;
-        content: attr(data-content);
-        display: block;
-        transform: translateY(-100%);
-        transition: transform 275ms ease;
-      }
-    }
-
-    &:hover {
-      span {
-        transform: translateY(0);
-
-        &::after {
-          transform: translateY(0);
-        }
-      }
-    }
-
-    
   }
 }
 

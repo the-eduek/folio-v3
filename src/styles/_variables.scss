@@ -11,3 +11,7 @@ $primary: #0000ee;
 %tight {
   letter-spacing: -0.75px;
 }
+
+%transition {
+  transition: transform 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
