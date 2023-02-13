@@ -66,9 +66,36 @@ header {
   padding: 8vh 1.25rem;
   width: 85%;
   
+  a,
   b {
     color: $primary;
     font-weight: 500;
+  }
+
+  a {
+    // @extend %transition;
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    
+    &::after {
+      @extend %transition;
+      background-color: rgba($primary, 0.15);
+      content: "";
+      display: inline-block;
+      left: 0;
+      position: absolute;
+      height: 55%;
+      bottom: -0.125rem;
+      transform: translateY(100%);
+      width: 100%;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateY(-0.125rem);
+      }
+    }
   }
 
   p {
@@ -177,7 +204,6 @@ header {
       p {          
         color: $lightGrey;
         font-size: 0.875rem;
-        font-weight: 400;
         text-transform: lowercase;
 
         &:last-child {
