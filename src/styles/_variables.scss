@@ -13,5 +13,5 @@ $primary: #0000ee;
 }
 
 %transition {
-  transition: transform 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: transform 300ms ease-out;
 }
